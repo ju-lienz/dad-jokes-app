@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Welcomewidget extends StatelessWidget {
-  const Welcomewidget({
+class WelcomeWidget extends StatelessWidget {
+  const WelcomeWidget({
     Key? key,
   }) : super(key: key);
 
@@ -11,26 +11,29 @@ class Welcomewidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text("Welcome to the"),
-          const Text("ULTIMATE DAD JOKES"),
+          const SizedBox(height: 330),
+          const Text("Welcome to the", style: TextStyle(fontSize: 29),),
+          const Text("ULTIMATE DAD JOKES", style: TextStyle(fontSize: 39),),
+          const SizedBox(height: 30),
+          const Text("Are you ready for it?", style: TextStyle(fontSize: 19),),
           const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.blue),
-              padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(16, 6, 16, 6)),
+              padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(24, 10, 24, 10)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),
-            child: const Text("Of course", style: TextStyle(color: Colors.white)),
+            child: const Text("Of course", style: TextStyle(color: Colors.white, fontSize: 24)),
           ),
-          const Spacer(), // Ocupa el espacio restante en la parte inferior
+          const Spacer(),
           const Align(
             alignment: Alignment.bottomCenter,
-            child: Text("What is a dad joke?"),
+            child: Text("What is a dad joke?", style: TextStyle(fontSize: 18),),
           ),
         ],
       ),

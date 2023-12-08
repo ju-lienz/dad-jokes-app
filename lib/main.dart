@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
+      title: "Dad's joke",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("dad's joke"),
+          title: const Text("The best app for your dad"),
         ),
-        body: const Welcomewidget(),
+        body: const WelcomeWidget(),
       ),
     );
   }
