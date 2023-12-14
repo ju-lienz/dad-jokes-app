@@ -1,10 +1,11 @@
 import 'package:dad_jokes_app/api/joke_api.dart';
+import 'package:dad_jokes_app/models/joke.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +16,35 @@ class WelcomeWidget extends StatelessWidget {
           const SizedBox(height: 330),
           const Text(
             "Welcome to the",
-            style: TextStyle(fontSize: 29),
+            style: TextStyle(fontSize: 24),
           ),
           const Text(
             "ULTIMATE DAD JOKES",
-            style: TextStyle(fontSize: 39),
+            style: TextStyle(fontSize: 49, fontFamily: 'DCCAsh'),
           ),
           const SizedBox(height: 30),
           const Text(
             "Are you ready for it?",
             style: TextStyle(fontSize: 19),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              FutureBuilder<Joke>(
+                future: fetchRandomJoke(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const CircularProgressIndicator();
+                  }
+
+                  if (snapshot.hasError) {
+                    return const Text('Error: error fetching joke');
+                  }
+
+                  return Text('Joke: ${snapshot.data!.joke}');
+                },
+              );
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.blue),
               padding: MaterialStateProperty.all(
@@ -50,20 +66,6 @@ class WelcomeWidget extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
           ),
-          Center(
-            child: FutureBuilder<Map<String, dynamic>>(
-              future: fetchRandomJoke(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                } else {
-                  return Text('Joke: ${snapshot.data?['joke']}');
-                }
-              },
-            ),
-          )
         ],
       ),
     );
