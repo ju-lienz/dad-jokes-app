@@ -1,5 +1,5 @@
-import 'package:dad_jokes_app/presentation/widgets/custom_app_bar.dart';
-import 'package:dad_jokes_app/presentation/widgets/welcome_widget.dart';
+import 'package:dad_jokes_app/widgets/custom_app_bar.dart';
+import 'package:dad_jokes_app/widgets/welcome_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

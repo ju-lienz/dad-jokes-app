@@ -1,6 +1,6 @@
 import 'package:dad_jokes_app/api/joke_api.dart';
 import 'package:dad_jokes_app/models/joke.dart';
-import 'package:dad_jokes_app/presentation/widgets/main_title.dart';
+import 'package:dad_jokes_app/widgets/main_title.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeWidget extends StatelessWidget {
