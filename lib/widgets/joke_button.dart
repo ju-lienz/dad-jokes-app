@@ -26,7 +26,8 @@ class JokeButton extends StatelessWidget {
         _fetchAndShowJoke(context);
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.blue),
+        backgroundColor:
+            MaterialStateProperty.all(const Color.fromARGB(255, 243, 152, 33)),
         padding: MaterialStateProperty.all(
             const EdgeInsets.fromLTRB(24, 10, 24, 10)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
