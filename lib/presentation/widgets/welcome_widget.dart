@@ -1,5 +1,6 @@
 import 'package:dad_jokes_app/api/joke_api.dart';
 import 'package:dad_jokes_app/models/joke.dart';
+import 'package:dad_jokes_app/presentation/widgets/main_title.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -13,21 +14,7 @@ class WelcomeWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 330),
-          const Text(
-            "Welcome to the",
-            style: TextStyle(fontSize: 24),
-          ),
-          const Text(
-            "ULTIMATE DAD JOKES",
-            style: TextStyle(fontSize: 49, fontFamily: 'DCCAsh'),
-          ),
-          const SizedBox(height: 30),
-          const Text(
-            "Are you ready for it?",
-            style: TextStyle(fontSize: 19),
-          ),
-          const SizedBox(height: 20),
+          const MainTitle(),
           ElevatedButton(
             onPressed: () {
               FutureBuilder<Joke>(
@@ -36,11 +23,9 @@ class WelcomeWidget extends StatelessWidget {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const CircularProgressIndicator();
                   }
-
                   if (snapshot.hasError) {
                     return const Text('Error: error fetching joke');
                   }
-
                   return Text('Joke: ${snapshot.data!.joke}');
                 },
               );
