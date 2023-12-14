@@ -11,7 +11,6 @@ void showPopup(BuildContext context, String message) {
           TextButton(
             onPressed: () {
               // Acción a realizar al presionar el botón del popup
-
               Navigator.of(context).pop(); // Cerrar el popup
             },
             child: const Text('Cerrar'),
