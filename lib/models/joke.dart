@@ -1,13 +1,13 @@
 class Joke {
-  final int id;
-  final String joke;
+  final String id;
+  final String content;
 
-  Joke({required this.id, required this.joke});
+  Joke({required this.id, required this.content});
 
   factory Joke.fromJson(Map<String, dynamic> json) {
     return Joke(
       id: json['id'],
-      joke: json['joke'],
+      content: json['joke'],
     );
   }
 }

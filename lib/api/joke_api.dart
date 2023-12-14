@@ -9,7 +9,6 @@ Future<Joke> fetchRandomJoke() async {
   if (response.statusCode < 200 || response.statusCode > 299) {
     throw Exception('Failed to load joke ;(');
   }
-
   // if (response.headers['X-Rate-Limited'] == 'yes') {
   //   throw Exception('Rate limited');
   // }
