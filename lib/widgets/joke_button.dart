@@ -1,6 +1,6 @@
 import 'package:dad_jokes_app/api/joke_api.dart';
 import 'package:dad_jokes_app/models/joke.dart';
-import 'package:dad_jokes_app/widgets/show_popup.dart';
+import 'package:dad_jokes_app/widgets/joke_popup.dart';
 import 'package:flutter/material.dart';
 
 class JokeButton extends StatelessWidget {
@@ -12,9 +12,9 @@ class JokeButton extends StatelessWidget {
     BuildContext currentContext = context; // Capture the context
     try {
       Joke joke = await fetchRandomJoke();
-      showPopup(currentContext, joke.content);
+      jokePopup(currentContext, joke.content);
     } catch (e) {
-      showPopup(currentContext, "Error fetching joke");
+      jokePopup(currentContext, "Error fetching joke");
       // Handle error if needed
     }
   }

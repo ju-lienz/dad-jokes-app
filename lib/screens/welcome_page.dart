@@ -1,3 +1,4 @@
+import 'package:dad_jokes_app/widgets/info_popup.dart';
 import 'package:dad_jokes_app/widgets/joke_button.dart';
 import 'package:dad_jokes_app/widgets/main_title.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,9 @@ class WelcomeWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    infoPopup(context);
+                  },
                   style: ButtonStyle(
                     overlayColor: MaterialStateColor.resolveWith(
                       (states) => const Color.fromARGB(20, 243, 152, 33),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void showPopup(BuildContext context, String message) {
+void jokePopup(BuildContext context, String message) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -13,7 +13,7 @@ void showPopup(BuildContext context, String message) {
               // Acción a realizar al presionar el botón del popup
               Navigator.of(context).pop(); // Cerrar el popup
             },
-            child: const Text('Cerrar'),
+            child: const Text('Close'),
           ),
         ],
       );
