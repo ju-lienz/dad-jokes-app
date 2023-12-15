@@ -20,7 +20,7 @@ class MainTitle extends StatelessWidget {
         "Are you ready for it?",
         style: TextStyle(fontSize: 19),
       ),
-      SizedBox(height: 15),
+      SizedBox(height: 12),
     ]);
   }
 }
