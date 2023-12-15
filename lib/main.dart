@@ -9,14 +9,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Dad's joke",
       home: Scaffold(
-        appBar: AppBar(
-          title: const CustomAppBar(),
-        ),
-        body: const WelcomeWidget(),
+        appBar: CustomAppBar(),
+        body: WelcomeWidget(),
       ),
     );
   }
